@@ -16,7 +16,7 @@ function getUsersNamesInAgeRange(users, gender) {
     );
   return result;
 }
-/*
+// Старый код:
 function getUsersNamesInAgeRange(users, gender) {
   if (users.length === 0 || (gender !== "мужской" && gender !== "женский")) {
     return 0;
@@ -37,4 +37,4 @@ function getUsersNamesInAgeRange(users, gender) {
         .length;
     return result;
   }
-}*/
+}
