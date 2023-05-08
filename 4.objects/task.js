@@ -1,8 +1,8 @@
 function Student(name, gender, age) {
-  (this.name = name),
-    (this.gender = gender),
-    (this.age = age),
-    (this.marks = []);
+  this.name = name,
+  this.gender = gender,
+  this.age = age,
+  this.marks = [];
 }
 let student = Object.create(Student);
 Object.create(Student);
