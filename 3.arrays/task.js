@@ -1,4 +1,4 @@
-// Задание 1. Поправил
+// Задание 1.
 function compareArrays(arr1, arr2) {
   return (
     arr1.length === arr2.length &&
@@ -6,35 +6,14 @@ function compareArrays(arr1, arr2) {
   );
 }
 
-// Задание 2. Поправил
+// Задание 2.
 function getUsersNamesInAgeRange(users, gender) {
   let result = users
     .filter((user) => user.gender === gender)
-    .reduce(
-      (averAge, userAge, index, array) => averAge + userAge.age / array.length,
-      0
-    );
+    .reduce((summator, userAge, index, array) => {
+      if (index === array.length - 1) {
+        (summator + userAge.age) / array.length, 0;
+      }
+    });
   return result;
-}
-// Старый код:
-function getUsersNamesInAgeRange(users, gender) {
-  if (users.length === 0 || (gender !== "мужской" && gender !== "женский")) {
-    return 0;
-  } else if (gender === "женский") {
-    result =
-      users
-        .filter((user) => user.gender === "женский")
-        .reduce((acc, cur) => acc + cur.age, 0) /
-      users.filter((user) => user.gender === "женский").map((ages) => ages.age)
-        .length;
-    return result;
-  } else if (gender === "мужской") {
-    result =
-      users
-        .filter((user) => user.gender === "мужской")
-        .reduce((acc, cur) => acc + cur.age, 0) /
-      users.filter((user) => user.gender === "мужской").map((ages) => ages.age)
-        .length;
-    return result;
-  }
 }
